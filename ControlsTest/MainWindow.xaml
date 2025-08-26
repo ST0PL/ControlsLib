@@ -1,0 +1,135 @@
+﻿<Window x:Class="ControlsTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ControlsTest"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        xmlns:lib="clr-namespace:ControlsLib.Controls;assembly=ControlsLib"
+        xmlns:prop="clr-namespace:ControlsLib.AttachedProperties;assembly=ControlsLib"
+        Background="#202024">
+    <Grid>
+        <lib:ScrollViewer prop:ScrollViewerHelper.ScrollBarCornerRadius="5"
+                          prop:ScrollViewerHelper.ScrollBarThumbCornerRadius="5"
+                          prop:ScrollViewerHelper.ScrollBarBackground="#f0f0f0"
+                          Margin="5">
+            <StackPanel prop:PanelChildrenProperties.Margin="5">
+                <lib:ListView prop:ScrollViewerHelper.ScrollBarThumbCornerRadius="5"
+                              ScrollBarCornerRadius="3"
+                              ItemBorderRadius="10"
+                              BorderBrush="Black"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Top"
+                              Width="200"
+                              Height="150">
+                    <lib:ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" Padding="10"/>
+                        </DataTemplate>
+                    </lib:ListView.ItemTemplate>
+                    <ListItem/>
+                    <ListItem/>
+                    <ListItem/>
+                    <ListItem/>
+                    <ListItem/>
+                </lib:ListView>
+                <lib:ComboBox Background="#1d1d21"
+                              HoverBackgroundColor="#242429"
+                              Foreground="White"
+                              FontWeight="SemiBold"
+                              Padding="10"
+                              FontSize="15"
+                              BorderBrush="Gray"
+                              HoverItemBackground="#28282d"
+                              SelectedItemBackground="#3e3e44"
+                              ItemsForeground="White"
+                              PopupBackground="Aqua"
+                              ItemsCornerRadius="5"
+                              PopupCornerRadius="5"
+                              PopupMargin="5"
+                              CornerRadius="5"
+                              SelectedIndex="0">
+                    <sys:String>Item 1</sys:String>
+                    <sys:String>Item 2</sys:String>
+                    <sys:String>Item 3</sys:String>
+                    <sys:String>Item 4</sys:String>
+                </lib:ComboBox>
+                <lib:TextBox x:Name="textbox"
+                             Padding="5"
+                             Background="#242f3d"
+                             CornerRadius="5"
+                             FontSize="15"
+                             PlaceholderForeground="LightGray"
+                             PlaceholderOpacity="0.4"
+                             BorderThickness="0"
+                             Placeholder="Placeholder text"
+                             TitleForeground="White"
+                             TitleFontWeight="SemiBold"
+                             Title="TextBox title"/>
+                <lib:CheckBox Title="CheckBox title"
+                              TitleFontWeight="SemiBold"
+                              TitleFontSize="15"
+                              CheckWidth="15"
+                              CheckHeight="15"
+                              VerticalContentAlignment="Center"
+                              BorderThickness="1"
+                              TitleForeground="White"
+                              Foreground="#5eb5f7"
+                              BorderBrush="#202b36"
+                              CornerRadius="2"/>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            prop:PanelChildrenProperties.Margin="10">
+                    <lib:Button Background="#d22d39"
+                                CornerRadius="10"
+                                Padding="10"
+                                BorderThickness="0"
+                                HoverBackgroundColor="#bc2934"
+                                ClickBackgroundColor="#a0222b"
+                                Foreground="White"
+                                FontSize="15"
+                                HorizontalAlignment="Left"
+                                FontWeight="SemiBold">
+                        Button content
+                    </lib:Button>
+                    <lib:NavigationRadioButton Style="{StaticResource navRadioStyle1}"
+                                               IsChecked="True"
+                                               Content="Home"
+                                               ImageSource="{StaticResource HomeUnchecked}"
+                                               CheckedImageSource="{StaticResource HomeChecked}"/>
+
+                    <lib:NavigationRadioButton Style="{StaticResource navRadioStyle1}"
+                                               Content="Settings"
+                                               ImageSource="{StaticResource SettingsUnchecked}"
+                                               CheckedImageSource="{StaticResource SettingsChecked}"/>
+                </StackPanel>
+                <lib:ProgressBar Value="10"
+                                 Padding="5"
+                                 BorderThickness="2"
+                                 BorderBrush="Red"
+                                 CornerRadius="5"
+                                 Maximum="20"/>
+                <Border Background="#0e1621"
+                        Padding="5"
+                        Margin="10"
+                        CornerRadius="5">
+                    <lib:TimeProgressBar ProgressBarBackground="#212831"
+                                         ProgressBarForeground="#565b60"
+                                         Foreground="#cccccc"
+                                         FontWeight="SemiBold"
+                                         ProgressBarCornerRadius="2"
+                                         ProgressBarHeight="5">
+                        <lib:TimeProgressBar.TimeContext>
+                            <MultiBinding Converter="{StaticResource TimeBarContextConverter}">
+                                <Binding Path="StartTimestamp"/>
+                                <Binding Path="EndTimestamp"/>
+                            </MultiBinding>
+                        </lib:TimeProgressBar.TimeContext>
+                    </lib:TimeProgressBar>
+                </Border>
+            </StackPanel>
+        </lib:ScrollViewer>
+    </Grid>
+</Window>

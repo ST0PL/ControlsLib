@@ -18,6 +18,10 @@ namespace ControlsLib.Controls
 
         public static readonly DependencyProperty PopupBackgroundProperty =
             DependencyProperty.Register("PopupBackground", typeof(Brush), typeof(ComboBox));
+        public static readonly DependencyProperty PopupBorderBrushProperty =
+            DependencyProperty.Register("PopupBorderBrush", typeof(Brush), typeof(ComboBox));
+        public static readonly DependencyProperty PopupBorderThicknessProperty =
+            DependencyProperty.Register("PopupBorderThickness", typeof(Thickness), typeof(ComboBox));
         public static readonly DependencyProperty PopupCornerRadiusProperty =
             DependencyProperty.Register("PopupCornerRadius", typeof(CornerRadius), typeof(ComboBox));
         public static readonly DependencyProperty PopupWidthProperty =
@@ -83,15 +87,25 @@ namespace ControlsLib.Controls
             get => (Brush)GetValue(ClickBackgroundColorProperty);
             set => SetValue(ClickBackgroundColorProperty, value);
         }
-        public CornerRadius PopupCornerRadius
-        {
-            get => (CornerRadius)GetValue(PopupCornerRadiusProperty);
-            set => SetValue(PopupCornerRadiusProperty, value);
-        }
         public Brush PopupBackground
         {
             get => (Brush)GetValue(PopupBackgroundProperty);
             set => SetValue(PopupBackgroundProperty, value);
+        }
+        public Brush PopupBorderBrush
+        {
+            get => (Brush)GetValue(PopupBorderBrushProperty);
+            set => SetValue(PopupBorderBrushProperty, value);
+        }
+        public Thickness PopupBorderThickness
+        {
+            get => (Thickness)GetValue(PopupBorderThicknessProperty);
+            set => SetValue(PopupBorderThicknessProperty, value);
+        }
+        public CornerRadius PopupCornerRadius
+        {
+            get => (CornerRadius)GetValue(PopupCornerRadiusProperty);
+            set => SetValue(PopupCornerRadiusProperty, value);
         }
         public double PopupWidth
         {

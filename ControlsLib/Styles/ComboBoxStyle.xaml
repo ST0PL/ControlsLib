@@ -178,6 +178,8 @@
                             Margin="{TemplateBinding PopupMargin}"
                             CornerRadius="{TemplateBinding PopupCornerRadius}"
                             Background="{TemplateBinding PopupBackground}"
+                            BorderBrush="{TemplateBinding PopupBorderBrush}"
+                            BorderThickness="{TemplateBinding PopupBorderThickness}"
                             Effect="{TemplateBinding PopupEffect}"
                             UseLayoutRounding="True">
                         <controls:ScrollViewer x:Name="DropDownScrollViewer">
@@ -236,8 +238,10 @@
         <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
         <Setter Property="Background" Value="{DynamicResource ComboBox.Static.Background}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource ComboBox.Static.Border}"/>
+        <Setter Property="PopupBorderBrush" Value="{DynamicResource ComboBox.Static.Border}"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
         <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="PopupBorderThickness" Value="1"/>
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
         <Setter Property="Padding" Value="6,3,5,3"/>

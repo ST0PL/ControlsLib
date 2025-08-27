@@ -110,8 +110,10 @@ For example see [Rich Presence GUI](https://github.com/ST0PL/RichPresenceGUI)
     - `ItemsForeground`
     - `HoverBackgroundColor`
     - `ClickBackgroundColor`
-    - `PopupCornerRadius`
     - `PopupBackground`
+    - `PopupBorderBrush`
+    - `PopupBorderThickness`
+    - `PopupCornerRadius`
     - `PopupWidth`
     - `PopupHeight`
     - `PopupMaxWidth`

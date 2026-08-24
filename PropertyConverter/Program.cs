@@ -3,7 +3,7 @@
     internal class Program
     {
         // Convert from HorizontalAlignment="Right" to <Setter Property="HorizontalAlignment" Value="Right"/>
-        static void Main(string[] args)
+        static void Main()
         {
             bool isRunning = true;
             var convertedProperties = new List<string>();
@@ -16,7 +16,7 @@
                     if (!string.IsNullOrWhiteSpace(property))
                     {
                         var splitted = property.Split("=");
-                        convertedProperties.Add($"<Setter Property=\"{splitted[0].Replace(" ","")}\" Value={splitted[1]}/>");
+                        convertedProperties.Add($"<Setter Property=\"{splitted[0].Replace(" ","")}\" Value={string.Join("=", splitted[1..])}/>");
                     }
                     else
                         break;

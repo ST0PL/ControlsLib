@@ -190,6 +190,7 @@ For example see [Rich Presence GUI](https://github.com/ST0PL/RichPresenceGUI)
 
 - ListBoxBehaviour
 	- `AllowCopy`
+	- `AutoScroll`
 
 - PanelChildrenProperties
 	- `Margin`
